@@ -20,6 +20,7 @@ class PersonService(
     }
 
     fun update(person: Person): Person {
+        Thread.sleep(30000)
         return repository.save(person)
     }
 
