@@ -19,4 +19,8 @@ class PersonService(
         return repository.findById(id).get()
     }
 
+    fun update(person: Person): Person {
+        return repository.save(person)
+    }
+
 }
