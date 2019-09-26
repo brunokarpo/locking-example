@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: release
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://database:5432/locking-db
+    username: locking-user
+    password: locking-password
+  flyway:
+    enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: none
