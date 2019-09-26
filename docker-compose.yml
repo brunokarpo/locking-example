@@ -1,7 +1,17 @@
 version: '3'
 
 services:
+  database:
+    image: postgres:9.6-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: locking-user
+      POSTGRES_PASSWORD: locking-password
+      POSTGRES_DB: locking-db
+
   app:
     build: .
     ports:
       - 8080:8080
+    depends_on:
+      - database
