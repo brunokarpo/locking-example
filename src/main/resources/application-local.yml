@@ -11,3 +11,6 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
+
+redis:
+  url: redis://localhost:6379
