@@ -16,8 +16,12 @@ infra:
 	 -e POSTGRES_DB=locking-db\
 	 -d postgres:9.6-alpine
 
+	docker run --rm --name locking-redis\
+	 -p 6379:6379\
+	 -d redis:5.0.6-alpine
+
 infra-stop:
-	docker container stop locking-postgres
+	docker container stop locking-postgres locking-redis
 
 # Docker steps
 run-app: _clean

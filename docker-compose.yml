@@ -9,6 +9,10 @@ services:
       POSTGRES_PASSWORD: locking-password
       POSTGRES_DB: locking-db
 
+  redis:
+    image: redis:5.0.6-alpine
+    restart: always
+
   app:
     build: .
     ports:
