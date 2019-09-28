@@ -15,7 +15,13 @@ services:
 
   app:
     build: .
+    environment:
+      spring.datasource.url: "jdbc:postgresql://database:5432/locking-db"
+      spring.datasource.username: locking-user
+      spring.datasource.password: locking-password
+      redis.url: "redis://redis:6379"
     ports:
       - 8080:8080
     depends_on:
       - database
+      - redis
